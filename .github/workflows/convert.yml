@@ -13,6 +13,7 @@ jobs:
       - name: execute py script # run the run.py to get the latest data
         run: |
          ls -a
+         readlink +f adlist_converter.py
          mkdir filtersTest
          cd filtersTest
          ls -a
