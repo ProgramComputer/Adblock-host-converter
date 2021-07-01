@@ -1,5 +1,7 @@
 # Pihole Adlist/Blocklist Converter
-# Work in Progress check https://help.eyeo.com/en/adblockplus/how-to-write-filters for info on Adblock filters and https://man7.org/linux/man-pages/man5/hosts.5.html
+
+
+ https://help.eyeo.com/en/adblockplus/how-to-write-filters for info on Adblock filters and https://man7.org/linux/man-pages/man5/hosts.5.html on hosts file.
 
 
 
