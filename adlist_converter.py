@@ -107,7 +107,8 @@ def writeList(inURL, adList, newFile):
 				if line.startswith(("#", "!", "/", "|", "-", "@", "*", "^", "$")) == False:
 					lineList = checkCSV(line)
 					if (lineList) and (lineList != csvStack):
-						writer.writelines("\n".join(lineList)+"\n")
+						writer.writelines("0.0.0.0"+ "\n0.0.0.0 ".join(lineList)+"\n")
+						#writer.writelines("::"+ ":: \n".join(lineList)+"\n") #ipv6 support
 					csvStack = lineList 	# don't write duplicate lists
 			except:
 				pass
@@ -116,7 +117,9 @@ def writeList(inURL, adList, newFile):
 				if line.startswith("@@||") == True:
 					line = cleanAdstr(line[4:])
 					if line:
-						writer.write(line+"\n")
+						writer.write("0.0.0.0 "line+"\n")
+						#writer.write(":: "line+"\n") #ipv6 support
+						
 			except: 
 				pass
 
@@ -124,7 +127,9 @@ def writeList(inURL, adList, newFile):
 				if line.startswith("||") == True:
 					line = cleanAdstr(line[2:])
 					if line:
-						writer.write(line+"\n")
+						writer.write("0.0.0.0 "+line+"\n")
+						#writer.write(":: "line+"\n") #ipv6 support
+						
 			except: 
 				pass
 
