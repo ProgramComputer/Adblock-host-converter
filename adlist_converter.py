@@ -98,7 +98,7 @@ def writeList(inURL, adList, newFile):
 	''' Create parsed blocklist file.
 	'''
 	csvStack = []
-	writer = open(newFile, 'w')
+	writer = open(newFile, 'w+') #create if not exist and write
 	#writer.write("# Converted by: https://github.com/ProgramComputer/Adblock-hosts-converter"+"\n")
 	#writer.write("# Blocklist: "+inURL+"\n")
 	for line in adList.splitlines():
