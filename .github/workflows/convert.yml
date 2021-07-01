@@ -14,6 +14,6 @@ jobs:
         run: |
          mkdir filtersTest
          cd filtersTest
-         python3 adlist_converter.py "https://raw.githubusercontent.com/easylist/easylist/5008acc52f520fbf2a05377e1b95defc95165523/easylist/easylist_adservers.txt"
+         python3 /adlist_converter.py "https://raw.githubusercontent.com/easylist/easylist/5008acc52f520fbf2a05377e1b95defc95165523/easylist/easylist_adservers.txt"
         env:
           key: ${{ secrets.key }} # if run.py requires passwords..etc, set it as secrets
