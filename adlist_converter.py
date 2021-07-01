@@ -117,7 +117,7 @@ def writeList(inURL, adList, newFile):
 				if line.startswith("@@||") == True:
 					line = cleanAdstr(line[4:])
 					if line:
-						writer.write("0.0.0.0 "line+"\n")
+						writer.write("0.0.0.0 "+line+"\n")
 						#writer.write(":: "line+"\n") #ipv6 support
 						
 			except: 
