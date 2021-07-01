@@ -1,12 +1,13 @@
 # Pihole Adlist/Blocklist Converter
-#Work in Progress check https://help.eyeo.com/en/adblockplus/how-to-write-filters for info on Adblock filters and https://man7.org/linux/man-pages/man5/hosts.5.html
-A simple script for converting Adblock formatted lists into a domains-only block list compatible with pihole v4.3.2+, which no longer supports Adblock list styles: https://pi-hole.net/2019/09/21/pi-hole-4-3-2-release-notes/#page-content.
+# Work in Progress check https://help.eyeo.com/en/adblockplus/how-to-write-filters for info on Adblock filters and https://man7.org/linux/man-pages/man5/hosts.5.html
 
-The script will parse all lines in the Adblock list format and extract all complete domains/hostnames (non-regex/wildcarded) into a plain-text list under `/filters` directory. Feel free to fork this repositry to manage your own collection of blocklists for pihole gravity.
+
+
+The script will parse all lines in the Adblock list format and extract all complete domains/hostnames (non-regex/wildcarded) into a plain-text list under `/filters` directory. 
 
 ## How to Use
 
-Like pihole gravity, the script will only accept **text/plain** content type data. 
+
 
 To run:
 ```
@@ -20,4 +21,4 @@ python3 adlist_converter.py "https://raw.githubusercontent.com/uBlockOrigin/uAss
 
 ### Notes:
 
-- Some Adblock lists will include benign domains such as youtube[.]com, which the script will not ignore. Be cautious when adding full domains lists to pihole gravity. Scan the parsed blocklist for common domains before uploading. 
+- Some Adblock lists will include benign domains such as youtube[.]com, which the script will not ignore. Scan the parsed blocklist for common domains before uploading. 
