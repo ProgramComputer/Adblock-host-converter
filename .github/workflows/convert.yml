@@ -1,5 +1,7 @@
 name: convert
-on: push
+on: 
+  push: 
+    paths: './*.py'
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -18,3 +20,13 @@ jobs:
          sudo python3 /home/runner/work/Adblock-hosts-converter/Adblock-hosts-converter/adlist_converter.py "https://raw.githubusercontent.com/easylist/easylist/5008acc52f520fbf2a05377e1b95defc95165523/easylist/easylist_adservers.txt"
         env:
           key: ${{ secrets.key }} # if run.py requires passwords..etc, set it as secrets
+      - name: Commit files # transfer the new html files back into the repository
+        run: |
+         git config --local user.name "Adhosts"
+         git add ./*.txt
+         git commit -m "Updating the filterTest folder"
+      - name: Push changes # push the output folder to your repo
+        uses: ad-m/github-push-action@master
+        with:
+         github_token: ${{ secrets.GITHUB_TOKEN }}
+         force: true
